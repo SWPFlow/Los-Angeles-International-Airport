@@ -1,0 +1,86 @@
+{\rtf1\ansi\ansicpg936\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid101\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\deftab720
+\pard\pardeftab720\sl340\sa240\partightenfactor0
+
+\f0\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+the Los Angeles International Airport (LAX) traffic data 
+\i \'93lax.json\'94
+\i0  lists the number of passengers who departed from or arrived at LAX terminals at the first day of each month, starting from January, 2006 to November, 2016. For example, the 5
+\fs18\fsmilli9333 \up10 th 
+\fs29\fsmilli14667 \up0 record says there were 401,535 people arriving at Terminal 1 on 1/1/2006 through domestic flights. 
+\fs24 \
+
+\fs29\fsmilli14667 a 
+\b Python 
+\b0 script 
+\i \'93lax.py\'94 
+\i0 that takes 
+\i \'93lax.json\'94 
+\i0 and a list of keywords (that specify the search condition) as the input, and outputs the following statistics for the records that satisfy the search condition: 
+\b min, max, median, average, and standard deviation
+\b0 . For example, min is the minimum number of passengers among all qualified records. 
+\fs24 \
+
+\fs29\fsmilli14667 The keywords in the list are separated by white spaces and may only contain keywords of 3 categories: 
+\b terminal
+\b0 , 
+\b year
+\b0 , and 
+\b traffic type 
+\b0 (departure/arrival). 
+\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl340\sa240\partightenfactor0
+\ls1\ilvl0
+\fs29\fsmilli14667 \cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Accepted keywords for terminals are: T1 (for terminal 1), T2, ..., T6, and TBI (for Tom Bradley international terminal). Keywords are 
+\b case-insensitive
+\b0 . 
+\i \'93t1\'94 
+\i0 should be recognized the same as 
+\i \'93T1\'94
+\i0 , for example. 
+\fs24 \
+\ls1\ilvl0
+\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Year is a four-digit number, e.g., 2006. 
+\fs24 \
+\ls1\ilvl0
+\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Traffic type is either departure or arrival. 
+\fs24 \uc0\u8232 
+\fs29\fsmilli14667  
+\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl340\sa240\partightenfactor0
+\ls2\ilvl0
+\fs29\fsmilli14667 \cf2 There could be multiple keywords in a same category, e.g. 
+\i "2015 2016 t1 t2" 
+\i0 includes traffic data in both years and at both terminals. 
+\fs24 \
+\ls2\ilvl0
+\fs29\fsmilli14667 This 
+\b \cf2 Python 
+\b0 script \cf2 we only handle terminals from 
+\i T1 
+\i0 to 
+\i T6 
+\i0 and 
+\i TBI
+\i0 . If no terminal keyword is given, then only and all of 
+\i T1 
+\i0 to 
+\i T6 
+\i0 and 
+\i TBI 
+\i0 should be considered. Data for the other terminals is ignored. 
+\fs24 \
+\ls2\ilvl0
+\fs29\fsmilli14667 Calculation of these 5 types of statistics, namely min, max, median, average, and standard deviation.
+\fs24 \uc0\u8232 \
+}
